@@ -1,0 +1,658 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>第六届中国国际进口博览会数据化大屏</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <link rel="stylesheet" href="css/comon0.css">
+</head>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var html=$(".wrap ul").html()
+		$(".wrap ul").append(html)
+		var ls=$(".wrap li").length/2+1
+		i=0
+		ref = setInterval(function(){
+			i++
+			if(i==ls){
+				i=1
+				$(".wrap ul").css({marginTop:0})
+				$(".wrap ul").animate({marginTop:-'.52'*i+'rem'},1000)
+			}
+	    	$(".wrap ul").animate({marginTop:-'.52'*i+'rem'},1000)
+
+
+		},2400);
+
+
+
+				var html2=$(".adduser ul").html()
+		$(".adduser ul").append(html2)
+		var ls2=$(".adduser li").length/2+1
+		a=0
+		ref = setInterval(function(){
+			a++
+			if(a==ls2){
+				a=1
+				$(".adduser ul").css({marginTop:0})
+				$(".adduser ul").animate({marginTop:-'.5'*a+'rem'},800)
+			}
+	    	$(".adduser ul").animate({marginTop:-'.5'*a+'rem'},800)
+
+
+		},4300);
+
+
+
+
+
+
+
+
+	})
+</script>
+<body>
+    <div class="loading">
+        <div class="loadbox"> <img src="images/loading.gif"> 页面加载中... </div>
+    </div>
+    <div class="head">
+        <h1><img src="images/logo.png">第六届中国国际进口博览会可视化大屏</h1>
+        <div class="weather"><img src="images/weather.png"><span>雨夹雪</span><span>2023-12-30</span></div>
+    </div>
+    <div class="mainbox">
+        <ul class="clearfix">
+            <li>
+                <div class="boxall" style="height: 2.7rem">
+                    <div class="alltitle">第六届中国国际进口博览会展会亮点</div>
+
+                    <div class="sycm">
+                        <ul class="clearfix">
+                            <li><h2>154</h2><span>国家地区和国际代表组织个数</span></li>
+                            <li><h2>442</h2><span>代表性首发产品技术和服务</span></li>
+                            <li><h2>22</h2><span>虹桥论坛分论坛</span></li>
+                        </ul>
+                        <div style="border-bottom: 0.5px solid rgba(255,255,255,.1)"></div>
+                        <ul class="clearfix">
+                            <li><h2>72</h2><span>参展国家和国际组织</span></li>
+                            <li><h2>289</h2><span>世界500强和行业龙头参展商</span></li>
+                            <li><h2>3486</h2><span>企业商业展参展商</span></li>
+                        </ul>
+
+
+                    </div>
+                    <div class="boxfoot"></div>
+                </div>
+                <div class="boxall" style="height: 2.65rem">
+                    <div class="alltitle">相关舆情数据</div>
+                    <div class="sy" id="echarts1"></div>
+                    <div class="sy" id="echarts2"></div>
+                    <div class="sy" id="echarts3"></div>
+                    <div class="boxfoot"></div>
+                </div>
+                <div class="boxall" style="height: 2.95rem">
+                    <div class="alltitle">行业区分比例</div>
+                    <div id="echarts4" style="height: 2.2rem; width: 100%;"></div>
+                    <div class="boxfoot"></div>
+                </div>
+            </li>
+            <li>
+                <div class="bar">
+                    <div class="barbox">
+                        <ul class="clearfix">
+                            <li class="pulll_left counter">12581189</li>
+                            <li class="pulll_left counter">3912410</li>
+                        </ul>
+                    </div>
+                    <div class="barbox2">
+                        <ul class="clearfix">
+                            <li class="pulll_left">消费总金额</li>
+                            <li class="pulll_left">消费总笔数</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="map">
+                    <div class="map1"><img src="images/lbx.png"></div>
+                    <div class="map2"><img src="images/jt.png"></div>
+                    <div class="map3"><img src="images/map.png"></div>
+                    <div class="map4" id="map_1"></div>
+                </div>
+            </li>
+            <li>
+                <div class="boxall" style="height:5.2rem">
+                    <div class="alltitle">采购信息</div>
+                    <div class="tabs">
+                        <ul class="clearfix">
+                            <li><a class="active" href="#">7天</a></li>
+                            <li><a href="#">15天</a></li>
+                            <li><a href="#">30天</a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix">
+                        <div class="sy" id="echarts6"></div>
+                        <div class="sy" id="echarts7"></div>
+                        <div class="sy" id="echarts8"></div>
+                    </div>
+                    <div class="addnew">
+                        <div class="tit02"><span>关键传播信息</span></div>
+                        <div class="adduser">
+                            <ul class="clearfix">
+                                <li class="clearfix"> <span class="pulll_left">必须坚持高质量发展和高水平安全良性互动</span> <span class="pulll_right">开封视听网 </span> </li>
+                                <li class="clearfix"> <span class="pulll_left">合作共赢创未来——变革的力量</span> <span class="pulll_right">群众新闻网 </span> </li>
+                                <li class="clearfix"> <span class="pulll_left">区域引力强劲 外商持续加码</span> <span class="pulll_right">广州日报 </span> </li>
+                                <li class="clearfix"> <span class="pulll_left">推动中尼关系不断取得新成果</span> <span class="pulll_right">人民日报 </span> </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="boxfoot"></div>
+                </div>
+                <div class="boxall" style="height: 3.4rem">
+                    <div class="alltitle">实时要闻</div>
+                    <div class="wrap">
+                        <ul>
+                            <li>
+                                <p>李强出席开幕式及相关活动并发表主旨演讲</p>
+                            </li>
+                            <li>
+                                <p>上海市长龚正：欢迎各国企业参加，共享发展红利</p>
+                            </li>
+                            <li>
+                                <p>固本开新行稳致远——读懂中国经济的“大逻辑”</p>
+                            </li>
+                            <li>
+                                <p>王文涛：中欧是伙伴不是对手</p>
+                            </li>
+                            <li>
+                                <p>外贸怎么稳？优进优出、产业融合、贸易畅通！</p>
+                            </li>
+                            <li>
+                                <p>王文涛刊文：奋力推动“十四五”时期商务高质量发展</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="boxfoot"></div>
+                </div>
+            </li>
+        </ul>
+ 
+    </div>
+    <div class="back"></div>
+    <script language="JavaScript" src="js/js.js"></script>
+    <script type="text/javascript" src="js/echarts.min.js"></script>
+    <script type="text/javascript" src="js/china.js"></script>
+    <script type="text/javascript" src="js/area_echarts.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            myChart1.resize();
+            myChart2.resize();
+            myChart3.resize();
+            myChart6.resize();
+            myChart7.resize();
+            myChart8.resize();
+        })
+        window.addEventListener("resize", function () {
+            myChart1.resize();
+            myChart2.resize();
+            myChart3.resize();
+            myChart6.resize();
+            myChart7.resize();
+            myChart8.resize();
+        });
+    </script>
+    <script type="text/javascript">
+        var v0 = 1000;
+        var v1 = 11830;
+        var v2 = 5750;
+        var v3 = 1137;
+
+
+
+        var myChart6 = echarts.init(document.getElementById('echarts6'));
+        option6 = {
+            series: [{
+                type: 'pie',
+                radius: ['70%', '80%'],
+                color: '#0088cc',
+                label: {
+                    normal: {
+                        position: 'center'
+                    }
+                },
+                data: [{
+                    value: v1,
+                    name: '已匹配采购信息',
+                    label: {
+                        normal: {
+                            formatter: v1 + '',
+                            textStyle: {
+                                fontSize: 20,
+                                color: '#fff',
+                            }
+                        }
+                    }
+                },
+                       {
+                           value: v0,
+                           name: '老会员',
+                           label: {
+                               normal: {
+                                   formatter: function (params) {
+                                       return '占比' + Math.round(v1 / v0 * 100) + '%'
+                                   },
+                                   textStyle: {
+                                       color: '#aaa',
+                                       fontSize: 12
+                                   }
+                               }
+                           },
+                           itemStyle: {
+                               normal: {
+                                   color: 'rgba(255,255,255,.2)'
+                               },
+                               emphasis: {
+                                   color: '#fff'
+                               }
+                           },
+                       }]
+            }]
+
+        };
+
+        var myChart7 = echarts.init(document.getElementById('echarts7'));
+        option7 = {
+            series: [{
+                type: 'pie',
+                radius: ['70%', '80%'],
+                color: '#fccb00',
+                label: {
+                    normal: {
+                        position: 'center'
+                    }
+                },
+                data: [{
+                    value: v2,
+                    name: '新增国家',
+                    label: {
+                        normal: {
+                            formatter: v2 + '',
+                            textStyle: {
+                                fontSize: 20,
+                                color: '#fff',
+                            }
+                        }
+                    }
+                },
+                       {
+                           value: v0,
+                           name: '总参展国家',
+                           label: {
+                               normal: {
+                                   formatter: function (params) {
+                                       return '占比' + Math.round(v2 / v0 * 100) + '%'
+                                   },
+                                   textStyle: {
+                                       color: '#aaa',
+                                       fontSize: 12
+                                   }
+                               }
+                           },
+                           itemStyle: {
+                               normal: {
+                                   color: 'rgba(255,255,255,.2)'
+                               },
+                               emphasis: {
+                                   color: '#fff'
+                               }
+                           },
+                       }]
+            }]
+        };
+
+
+        var myChart8 = echarts.init(document.getElementById('echarts8'));
+        option8 = {
+
+
+            series: [{
+
+                type: 'pie',
+                radius: ['70%', '80%'],
+                color: '#62b62f',
+                label: {
+                    normal: {
+                        position: 'center'
+                    }
+                },
+                data: [{
+                    value: v3,
+                    name: '正面',
+                    label: {
+                        normal: {
+                            formatter: v3 + '',
+                            textStyle: {
+                                fontSize: 20,
+                                color: '#fff',
+                            }
+                        }
+                    }
+                }, {
+                    value: v0,
+                    name: '中性',
+                    label: {
+                        normal: {
+                            formatter: function (params) {
+                                return '占比' + Math.round(v2 / v0 * 100) + '%'
+                            },
+                            textStyle: {
+                                color: '#aaa',
+                                fontSize: 12
+                            }
+                        }
+                    },
+                    itemStyle: {
+                        normal: {
+                            color: 'rgba(255,255,255,.2)'
+                        },
+                        emphasis: {
+                            color: '#fff'
+                        }
+                    },
+                }]
+            }]
+        };
+        setTimeout(function () {
+            myChart6.setOption(option6);
+            myChart7.setOption(option7);
+            myChart8.setOption(option8);
+        }, 500);
+
+    </script>
+    <script type="text/javascript">
+        var myChart1 = echarts.init(document.getElementById('echarts1'));
+        var v1 = 298;
+        var v2 = 523;
+        var v3 = v1 + v2;
+        option1 = {
+
+      
+            series: [{
+                type: 'pie',
+                radius: ['70%', '80%'],
+                color: '#0088cc',
+                label: {
+                    normal: {
+                        position: 'center'
+                    }
+                },
+                data: [{
+                    value: v1,
+                    name: '相关舆情情感属性',
+                    label: {
+                        normal: {
+                            formatter: v3 + '',
+                            textStyle: {
+                                fontSize: 20,
+                                color: '#fff',
+                            }
+                        }
+                    }
+                },
+                ]
+            }]
+        };
+
+
+        var myChart3 = echarts.init(document.getElementById('echarts3'));
+        var v1 = 417
+        var v2 = 103
+        var v3 = v1 + v2 
+        option2 = {
+
+       
+            series: [{
+                type: 'pie',
+                radius: ['70%', '80%'],
+                color: '#fccb00',
+                label: {
+                    normal: {
+                        position: 'center'
+                    }
+                },
+                data: [{
+                    value: v1,
+                    name: '中性',
+                    label: {
+                        normal: {
+                            formatter: v1 + '',
+                            textStyle: {
+                                fontSize: 20,
+                                color: '#fff',
+                            }
+                        }
+                    }
+                }, {
+                    value: v2,
+                    name: '正面',
+                    label: {
+                        normal: {
+                            formatter: function (params) {
+                                return '占比' + Math.round(v1 / v3 * 100) + '%'
+                            },
+                            textStyle: {
+                                color: '#aaa',
+                                fontSize: 12
+                            }
+                        }
+                    },
+                    itemStyle: {
+                        normal: {
+                            color: 'rgba(255,255,255,.2)'
+                        },
+                        emphasis: {
+                            color: '#fff'
+                        }
+                    },
+                }]
+            }]
+        };
+
+
+        var myChart2 = echarts.init(document.getElementById('echarts2'));
+        option3 = {
+
+
+            series: [{
+
+                type: 'pie',
+                radius: ['70%', '80%'],
+                color: '#62b62f',
+                label: {
+                    normal: {
+                        position: 'center'
+                    }
+                },
+                data: [{
+                    value: v2,
+                    name: '中性',
+                    label: {
+                        normal: {
+                            formatter: v2 + '',
+                            textStyle: {
+                                fontSize: 20,
+                                color: '#fff',
+                            }
+                        }
+                    }
+                }, {
+                    value: v1,
+                    name: '正面',
+                    label: {
+                        normal: {
+                            formatter: function (params) {
+                                return '占比' + Math.round(v2 / v3 * 100) + '%'
+                            },
+                            textStyle: {
+                                color: '#aaa',
+                                fontSize: 12
+                            }
+                        }
+                    },
+                    itemStyle: {
+                        normal: {
+                            color: 'rgba(255,255,255,.2)'
+                        },
+                        emphasis: {
+                            color: '#fff'
+                        }
+                    },
+                }]
+            }]
+        };
+        setTimeout(function () {
+            myChart1.setOption(option1);
+            myChart2.setOption(option2);
+            myChart3.setOption(option3);
+        }, 500);
+
+    </script>
+    <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('echarts4'));
+        var plantCap = [{
+            name: '食品及农产品',
+            value: '1764'
+        }, {
+            name: '汽车',
+            value: '448'
+        }, {
+            name: '技术',
+            value: '396'
+        }, {
+            name: '消费品展区',
+            value: '620'
+        }, {
+            name: '医疗',
+            value: '425'
+        }, {
+            name: '服务贸易',
+            value: '377'
+        }];
+        var datalist = [{
+            offset: [56, 48],
+            symbolSize: 110,
+   
+            color: 'rgba(73,188,247,.14)',
+
+        }, {
+
+            offset: [30, 70],
+            symbolSize: 70,
+            color: 'rgba(73,188,247,.14)'
+        }, {
+            offset: [0, 43],
+            symbolSize: 60,
+            color: 'rgba(73,188,247,.14)'
+
+        }, {
+            offset: [93, 30],
+            symbolSize: 70,
+            color: 'rgba(73,188,247,.14)'
+        }, {
+            offset: [26, 19],
+            symbolSize: 65,
+            color: 'rgba(73,188,247,.14)'
+        }, {
+            offset: [75, 75],
+            symbolSize: 60,
+            color: 'rgba(73,188,247,.14)'
+
+        }];
+
+        var datas = [];
+        for (var i = 0; i < plantCap.length; i++) {
+            var item = plantCap[i];
+            var itemToStyle = datalist[i];
+            datas.push({
+                name: item.value + '\n' + item.name,
+                value: itemToStyle.offset,
+                symbolSize: itemToStyle.symbolSize,
+                label: {
+                    normal: {
+                        textStyle: {
+                            fontSize: 14
+                        }
+                    }
+                },
+
+                itemStyle: {
+                    normal: {
+                        color: itemToStyle.color,
+                        opacity: itemToStyle.opacity
+                    }
+                },
+            })
+        }
+        option = {
+            grid: {
+                show: false,
+                top: 10,
+                bottom: 10
+            },
+
+            xAxis: [{
+                gridIndex: 0,
+                type: 'value',
+                show: false,
+                min: 0,
+                max: 100,
+                nameLocation: 'middle',
+                nameGap: 5
+            }],
+
+            yAxis: [{
+                gridIndex: 0,
+                min: 0,
+                show: false,
+                max: 100,
+                nameLocation: 'middle',
+                nameGap: 30
+            }],
+            series: [{
+                type: 'scatter',
+                symbol: 'circle',
+                symbolSize: 120,
+                label: {
+                    normal: {
+                        show: true,
+                        formatter: '{b}',
+                        color: '#FFF',
+                        textStyle: {
+                            fontSize: '30'
+                        }
+                    },
+                },
+                itemStyle: {
+                    normal: {
+                        color: '#F30'
+                    }
+                },
+                data: datas
+            }]
+
+        };
+        myChart.setOption(option);
+        $(document).ready(function () {
+            myChart.resize();
+
+        })
+        window.addEventListener("resize", function () {
+            myChart.resize();
+        });
+    </script>
+    <script type="text/javascript" src="js/jquery.waypoints.min.js"></script>
+    <script type="text/javascript" src="js/jquery.countup.min.js"></script>
+     <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script type="text/javascript">
+        $('.counter').countUp();
+    </script>
+
+</body>
+</html>
